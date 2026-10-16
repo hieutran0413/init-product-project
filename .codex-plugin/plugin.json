@@ -1,0 +1,21 @@
+{
+  "name": "init-product-project",
+  "version": "0.1.0+codex.20260927040958",
+  "description": "Build a product project foundation with scoped planning, safe workspace setup, and evidence-based readiness.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Init Product Project",
+    "shortDescription": "Turn a product brief into a usable project foundation.",
+    "longDescription": "Initialize new product workspaces or adapt existing project documentation. Preserve existing files and conventions, define the first delivery scope, and assess readiness without confusing a scaffold with completed work.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Kh\u1edfi t\u1ea1o n\u1ec1n t\u1ea3ng d\u1ef1 \u00e1n t\u1eeb \u00fd t\u01b0\u1edfng c\u1ee7a t\u00f4i.",
+      "Chu\u1ea9n b\u1ecb brief v\u00e0 k\u1ebf ho\u1ea1ch cho d\u1ef1 \u00e1n hi\u1ec7n t\u1ea1i."
+    ]
+  }
+}

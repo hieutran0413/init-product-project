@@ -1,0 +1,74 @@
+---
+doc_type: design-system
+project: {{PROJECT_NAME_YAML}}
+status: draft
+owner: TBD
+last_updated: {{DATE}}
+---
+
+# Design System
+
+## Principles
+
+- Prefer platform-native or framework-standard behavior.
+- Preserve accepted bespoke components that carry the product identity; evolve them deliberately rather than normalizing them by default.
+- Use semantic color, typography, spacing, and component roles.
+- Design all material states and recovery paths.
+- Treat accessibility and responsive/adaptive behavior as acceptance criteria.
+- Record intentional differences from references.
+
+## Existing system and presentation boundary
+
+- UI strategy: native-only / native-first / hybrid / bespoke-first / under review
+- Design-system source of truth:
+- Owner:
+- Posture: preserve / evolve / selectively replace
+
+| Surface | Presentation rule | Evidence / owner |
+| --- | --- | --- |
+| System chrome | Native or framework-standard unless an approved exception exists | |
+| Product content | Native composition and/or accepted bespoke components | |
+
+## Bespoke exceptions
+
+Record `None` or relevant custom-control tradeoffs. Ordinary branding does not require a formal exception. Link the owning decision instead of duplicating it.
+
+| Component/surface | User outcome | Why standard control is insufficient | Owner | Accessibility route | Adaptive/platform fallback | Performance budget | Validation |
+| --- | --- | --- | --- | --- | --- | --- |
+| | | | | | | | |
+
+## Foundations
+
+Color:
+
+Typography:
+
+Spacing/layout:
+
+Icons:
+
+Imagery:
+
+Motion:
+
+Content voice:
+
+## Component map
+
+| Product intent | Design component | Implementation primitive | States | Accessibility |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+
+## Responsive/adaptive matrix
+
+| Context | Navigation | Layout/density | Input | Validation |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+
+## Prohibited patterns
+
+- Custom controls with unresolved behavior or accessibility tradeoffs.
+- Replacing accepted bespoke identity with native defaults without product/design authority.
+- Gesture-, color-, animation-, hover-, or sound-only meaning.
+- Fixed layouts inferred from one screenshot.
+- Tokens or components without an implementation owner.

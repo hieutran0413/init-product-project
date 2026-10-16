@@ -1,0 +1,4 @@
+interface:
+  display_name: "Init Product Project"
+  short_description: "Start product-ready web, app, and tool projects"
+  default_prompt: "Use $init-product-project to start a new product project from brief through a code-ready workspace."

@@ -1,0 +1,52 @@
+---
+doc_type: documentation-index
+project: {{PROJECT_NAME_YAML}}
+project_type: "{{PROJECT_TYPE}}"
+status: discovery
+last_updated: {{DATE}}
+---
+
+# {{PROJECT_NAME}} Documentation
+
+## Start here
+
+Open [Feature Status](engineering/IMPLEMENTATION_STATUS.md) to see what works, what remains, and the next action for each feature. Follow its links for detailed decisions and evidence.
+
+## Source-of-truth order
+
+1. `AGENTS.md` — repository safety and agent rules.
+2. `product/PRODUCT_BRIEF.md` — users, problem, outcomes, scope.
+3. `design/DESIGN_SYSTEM.md` and `design/FLOW_AND_SCREEN_SPEC.md` — experience and state acceptance.
+4. `engineering/ARCHITECTURE.md` and `engineering/IMPLEMENTATION_PLAN.md` — technical decisions and delivery.
+5. Active feature packet — current scoped handoff.
+6. `engineering/IMPLEMENTATION_STATUS.md` — one concise feature overview with verified facts and links to detail.
+7. `operations/HANDOFF.md` — current operational context.
+
+## Workflow
+
+```text
+discovery
+→ design-ready
+→ code-ready
+→ in-progress
+→ verification
+→ accepted
+→ released
+```
+
+## Folders
+
+```text
+docs/
+├── product/
+├── research/
+├── design/
+├── engineering/
+├── operations/
+├── decisions/
+├── work-items/
+└── templates/
+```
+
+Raw evidence, exports, and scratch files belong in ignored `workbench/`.
+

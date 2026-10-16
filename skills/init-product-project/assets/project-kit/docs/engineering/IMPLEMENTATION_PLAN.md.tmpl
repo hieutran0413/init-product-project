@@ -1,0 +1,32 @@
+---
+doc_type: implementation-plan
+project: {{PROJECT_NAME_YAML}}
+status: draft
+last_updated: {{DATE}}
+---
+
+# Implementation Plan
+
+## Execution priorities
+
+| Priority | User or system proof | Admitted tasks | Exit condition |
+| --- | --- | --- | --- |
+| P0 | Establish the critical foundation | T1 | Measurable prerequisite evidence recorded |
+| P1 | Complete the first vertical journey | gated by P0 | User reaches the successful outcome and recovers from expected failure |
+| P2 | Verify acceptance | gated by P0/P1 | Required quality evidence passes |
+
+## Tasks
+
+| Task | Outcome | Dependencies | Risk | Acceptance | Status |
+| --- | --- | --- | --- | --- | --- |
+| T1 | Establish verified baseline | none | low | checks and inventory recorded | pending |
+
+Rules:
+
+- Deliver vertical user outcomes, not disconnected layers.
+- Keep only prerequisite-satisfied tasks active; mark the rest gated with the exact prerequisite.
+- Define measurable exit conditions before implementation starts.
+- Treat scaffolding and premature code as prototype evidence, not verified task progress.
+- Keep refactor, feature behavior, and tests reviewable.
+- Do not count placeholders or legacy code as completion.
+- Name required build, test, accessibility, security, and release checks.
