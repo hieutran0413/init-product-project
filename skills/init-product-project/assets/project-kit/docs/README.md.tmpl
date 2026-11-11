@@ -10,17 +10,30 @@ last_updated: {{DATE}}
 
 ## Start here
 
-Open [Feature Status](engineering/IMPLEMENTATION_STATUS.md) to see what works, what remains, and the next action for each feature. Follow its links for detailed decisions and evidence.
+For a new idea, start with [Product Brief](product/PRODUCT_BRIEF.md) and [Readiness Assessment](operations/READINESS.md). Record known facts, open assumptions and one next action.
+
+| Requested depth | Work now | Defer unless needed |
+| --- | --- | --- |
+| Workspace-only | Brief facts, open questions, next action | Research execution, full design system, architecture and feature packets |
+| Design-ready | Problem evidence, relevant rules, chosen journey, states and validation | Detailed implementation planning |
+| Code-ready | Design scope plus contracts, concrete acceptance and first packet | Unrelated features and release operations |
+| Implementation | Authorized scoped work and affected status | Scope not requested |
+
+The initializer includes the full template kit. File presence does not make every section mandatory or establish readiness. Reuse equivalent existing documents.
+
+For existing or implemented features, open [Feature Status](engineering/IMPLEMENTATION_STATUS.md) to see what works, what remains, and the next action for each feature. Follow its links for detailed decisions and evidence.
 
 ## Source-of-truth order
 
-1. `AGENTS.md` — repository safety and agent rules.
-2. `product/PRODUCT_BRIEF.md` — users, problem, outcomes, scope.
-3. `design/DESIGN_SYSTEM.md` and `design/FLOW_AND_SCREEN_SPEC.md` — experience and state acceptance.
-4. `engineering/ARCHITECTURE.md` and `engineering/IMPLEMENTATION_PLAN.md` — technical decisions and delivery.
-5. Active feature packet — current scoped handoff.
-6. `engineering/IMPLEMENTATION_STATUS.md` — one concise feature overview with verified facts and links to detail.
-7. `operations/HANDOFF.md` — current operational context.
+1. `AGENTS.md` - repository safety and agent rules.
+2. `product/PRODUCT_BRIEF.md` - users, problem, outcomes, scope.
+3. `design/DESIGN_SYSTEM.md` and `design/FLOW_AND_SCREEN_SPEC.md` - experience and state acceptance.
+4. `engineering/ARCHITECTURE.md` and `engineering/IMPLEMENTATION_PLAN.md` - technical decisions and delivery.
+5. Active feature packet - current scoped handoff.
+6. `engineering/IMPLEMENTATION_STATUS.md` - one concise feature overview with verified facts and links to detail.
+7. `operations/HANDOFF.md` - current operational context.
+
+Read [Readiness Assessment](operations/READINESS.md) for evidence supporting the current stage and unresolved gates.
 
 ## Workflow
 

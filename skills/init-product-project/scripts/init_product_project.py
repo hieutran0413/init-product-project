@@ -60,9 +60,8 @@ def template_destination(relative: Path) -> Path:
 
 
 def render(content: str, values: dict[str, str]) -> str:
-    for token, value in values.items():
-        content = content.replace(f"{{{{{token}}}}}", value)
-    return content
+    # Substitute template tokens once; user text is never re-interpreted.
+    return re.sub(r"\{\{([A-Z0-9_]+)\}\}", lambda match: values.get(match[1], match[0]), content)
 
 
 def main() -> int:
@@ -75,7 +74,18 @@ def main() -> int:
     except ValueError as error:
         print(error, file=sys.stderr)
         return 2
-    target = (args.path or (Path.cwd() / slug)).expanduser().resolve()
+    raw_target = (args.path or (Path.cwd() / slug)).expanduser()
+    # Check before resolve(), which would erase symlink evidence.
+    target = raw_target if raw_target.is_absolute() else Path.cwd() / raw_target
+    try:
+        for part in [target, *target.parents]:
+            if part.is_symlink():
+                raise ValueError(f"Refusing symlink in target path: {part}")
+            if part.exists() and not part.is_dir():
+                raise ValueError(f"Expected directory: {part}")
+    except (OSError, ValueError) as error:
+        print(error, file=sys.stderr)
+        return 2
     template_root = Path(__file__).resolve().parents[1] / "assets" / "project-kit"
 
     if not template_root.is_dir():
@@ -141,29 +151,10 @@ def main() -> int:
         print(error, file=sys.stderr)
         return 2
 
-    for relative, content in planned:
-        if not args.dry_run:
-            destination = target / relative
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            with destination.open("x", encoding="utf-8") as output:
-                output.write(content)
-        created.append(relative)
-
-    if not args.dry_run:
-        for relative in local_directories:
-            (target / relative).mkdir(parents=True, exist_ok=True)
-
-    unresolved = []
-    if not args.dry_run:
-        for relative in created:
-            content = (target / relative).read_text(encoding="utf-8")
-            if re.search(r"\{\{[A-Z0-9_]+\}\}", content):
-                unresolved.append(relative)
-
-    if unresolved:
-        print("Unresolved template tokens:", file=sys.stderr)
-        for relative in unresolved:
-            print(f"  {relative}", file=sys.stderr)
+    try:
+        write_plan(target, planned, local_directories, args.dry_run, created)
+    except OSError as error:
+        print(f"Workspace write failed: {error}. Inspect the partial scaffold and rerun with --integrate.", file=sys.stderr)
         return 1
 
     action = "Would create" if args.dry_run else "Created"
@@ -171,16 +162,28 @@ def main() -> int:
     print(f"Project type: {args.project_type}")
     print(f"Files created: {len(created)}")
     print(f"Files skipped: {len(skipped)}")
-
     for relative in created:
         print(f"  CREATE {relative}")
     for relative in skipped:
         print(f"  SKIP   {relative}")
-
     if not args.dry_run:
-        print("Status: discovery (scaffold only). Next: complete the brief; assess readiness before implementation.")
-
+        print("Phase: discovery (scaffold only). Readiness: not-assessed. Next: complete the brief; assess readiness before implementation.")
     return 0
+
+
+def write_plan(target, planned, local_directories, dry_run, created):
+    for relative, content in planned:
+        if not dry_run:
+            destination = target / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            with destination.open("x", encoding="utf-8") as output:
+                output.write(content)
+        created.append(relative)
+
+    if not dry_run:
+        for relative in local_directories:
+            (target / relative).mkdir(parents=True, exist_ok=True)
+
 
 
 if __name__ == "__main__":

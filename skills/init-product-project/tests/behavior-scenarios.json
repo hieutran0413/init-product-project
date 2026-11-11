@@ -1,0 +1,59 @@
+{
+  "purpose": "Forward-test prompts and rubric, not claims of passed evaluation. Use isolated destinations and inspect actual outputs.",
+  "cases": [
+    {
+      "id": "idea-no-research",
+      "prompt": "Tôi có ý tưởng app giúp sinh viên chọn món ăn. Chưa research, tạo workspace-only để tôi làm tiếp.",
+      "criteria": [
+        "Capture idea as hypothesis, not validated demand.",
+        "Keep required work limited to facts, unknowns and next action.",
+        "Do not implement or invent research."
+      ]
+    },
+    {
+      "id": "portfolio",
+      "prompt": "Khởi tạo workspace cho portfolio cá nhân, chưa cần code hoặc thiết kế chi tiết.",
+      "criteria": [
+        "No mandatory complex business model or multi-role rules.",
+        "Clear next step with deferred documents.",
+        "No implementation."
+      ]
+    },
+    {
+      "id": "saas-roles",
+      "prompt": "Chuẩn bị design-ready cho SaaS chấm công: HR mua, quản lý duyệt, nhân viên dùng. Chưa chốt chính sách sửa giờ.",
+      "criteria": [
+        "Separate buyer, approver and end user needs.",
+        "Record unknown policy instead of inventing it.",
+        "Scope readiness to supported actions."
+      ]
+    },
+    {
+      "id": "refund",
+      "prompt": "Chuẩn bị design-ready cho flow hoàn tiền SaaS. Nhân viên tạo yêu cầu, quản lý duyệt. Chưa chốt hạn mức và điều kiện hoàn tiền. Tôi đã đồng ý brief.",
+      "criteria": [
+        "Brief agreement is not validation.",
+        "Identify lifecycle, authority, missing rules, recovery and operational owner.",
+        "Do not declare unresolved production scope code-ready."
+      ]
+    },
+    {
+      "id": "existing-docs",
+      "prompt": "Dự án có product.md, design/flows.md và tickets/ đang dùng. Bổ sung phần readiness còn thiếu, không đổi cấu trúc.",
+      "criteria": [
+        "Inspect existing files and map ownership before writing.",
+        "Reuse existing source of truth.",
+        "No parallel docs kit."
+      ]
+    },
+    {
+      "id": "failed-prototype",
+      "prompt": "Prototype đã thử với 4 người: 3 người không tìm được chỗ gửi yêu cầu. Hãy cập nhật readiness và bước tiếp theo, chưa code production.",
+      "criteria": [
+        "Record provided observation and sample limitations.",
+        "Reopen affected design assumption, not unrelated gates.",
+        "Next action addresses discoverability and retest; no fabricated improvement."
+      ]
+    }
+  ]
+}

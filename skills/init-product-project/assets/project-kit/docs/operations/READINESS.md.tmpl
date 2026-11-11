@@ -1,0 +1,52 @@
+---
+doc_type: readiness
+project: {{PROJECT_NAME_YAML}}
+status: not-assessed
+last_updated: {{DATE}}
+---
+
+# Readiness Assessment
+
+Requested depth: workspace-only / design-ready / code-ready / implementation
+
+Assessed scope:
+
+Current workflow phase: discovery (scaffold only)
+
+Readiness assessment: not-assessed. A workflow phase does not indicate a passed gate.
+
+## Claim boundaries
+
+Agreement: what was chosen, by whom, and on what authority.
+
+Specification completeness: what scope is described well enough for the next action.
+
+Validation: what was actually checked, evidence and limitations; unknown if not checked.
+
+These are independent claims. An agreed brief or complete specification does not establish user validation. State readiness for a named action and scope; list accepted residual risks with their owner. Unresolved blockers keep that action gated. A learning prototype may be ready to test while production remains in discovery.
+
+## Gate evidence
+
+| Gate | Assessment | Evidence or owning document | Gap / next action | Owner |
+| --- | --- | --- | --- | --- |
+| Discovery | not-assessed | [Brief](../product/PRODUCT_BRIEF.md) | Complete known facts and record assumptions | Unassigned |
+| Design-ready | not-assessed | [Experience](../design/FLOW_AND_SCREEN_SPEC.md) | Assess applicable journeys and states | Unassigned |
+| Code-ready | not-assessed | [Architecture](../engineering/ARCHITECTURE.md) | Define the first scoped packet and actual checks | Unassigned |
+
+Use `not-assessed`, `met`, `gap`, or `not-applicable`. Every `met` needs evidence. Every `not-applicable` needs a reason. This table links to decisions; it does not duplicate them.
+
+For APIs, CLIs, and libraries, assess consumer journeys, contracts, outputs, errors, and compatibility. Visual design may be not applicable. For UI products, include accessibility and adaptive behavior relevant to the requested scope.
+
+## Remaining decisions
+
+Link to the owning document, identify the decision owner, and explain what it blocks. Do not turn unanswered questions into accepted requirements.
+
+## Next action
+
+Action:
+
+Owner:
+
+Evidence needed:
+
+Readiness does not grant implementation or publication authority. Feature progress belongs in [Feature Status](../engineering/IMPLEMENTATION_STATUS.md).

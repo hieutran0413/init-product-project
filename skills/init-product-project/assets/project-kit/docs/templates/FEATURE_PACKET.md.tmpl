@@ -44,6 +44,20 @@ Non-goals:
 
 - TBD
 
+## Business rules (when relevant)
+
+Actors / permissions:
+
+Entities and lifecycle:
+
+| Rule ID | Trigger / precondition | Allowed transition / outcome | Exception / recovery | Authority or open decision |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+Operational handoffs: user / system / operator, response expectation if known, failure owner.
+
+Link shared rules rather than copying them. Unknown policy stays open. Mark not applicable for scope without material business rules.
+
 ## Flow and states
 
 Entry:
@@ -86,6 +100,13 @@ Migration/destructive behavior:
 
 ## Acceptance
 
+| Scenario | Initial state / data | Action | Expected observable result | Rule / decision |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+Complete concrete scenarios for material success, denial and recovery paths before code-ready. The checklist below is coverage guidance, not evidence of passing behavior.
+
+
 - [ ] Happy path
 - [ ] Empty/loading/error/partial/offline
 - [ ] Repeated input/cancellation
@@ -93,6 +114,14 @@ Migration/destructive behavior:
 - [ ] Accessibility and responsive/adaptive behavior
 - [ ] Existing design-system compatibility is preserved, or an intentional difference is recorded
 - [ ] Build/test/security/release boundary
+
+## Learning and outcome
+
+Highest-risk assumption / validation evidence: link research register.
+
+If a learning prototype: question, authorized scope, mocks/limitations, disposable or reusable status, and checks required before production reuse. Production readiness remains separate.
+
+Outcome measure / review trigger: link brief or existing measurement owner.
 
 ## Implementation
 

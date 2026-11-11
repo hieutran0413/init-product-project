@@ -14,6 +14,12 @@
 
 Apply gates to the requested scope and product type. For APIs, CLIs, and libraries, replace visual and screen criteria with consumer journeys, contracts, output, errors, compatibility, and usage examples. Mark irrelevant criteria Not applicable with a reason. Release checks apply only to release work. Existing user choices count as authority; document them instead of asking again. Readiness records evidence, not authorization.
 
+## Readiness claim boundaries
+
+Distinguish agreement, specification completeness and validation evidence. Agreement alone cannot prove a problem or solution is validated. State the exact scope and next action supported by evidence, including limitations, residual risks and their owner. Do not invent acceptance of a risk. Evidence for existing patterns may be reused when its context still applies; new research is not mandatory for every change.
+
+An explicitly requested learning prototype may run before production code-ready if its learning question, scope, mocks/limitations and reuse conditions are clear. It does not pass production gates. Failed validation reopens the affected decision and readiness claim.
+
 ## Discovery
 
 Required:
@@ -25,7 +31,10 @@ Required:
 - explicit scope and non-goals;
 - major privacy, safety, data, entitlement, and platform constraints;
 - for an existing product, visual strategy, design-system source of truth, owner, and preserve/evolve/replace posture;
-- unresolved decisions and owners.
+- unresolved decisions and owners;
+- context/trigger, current workaround, evidence source and limitations;
+- distinct user, buyer and operator needs when relevant;
+- the next learning question when material uncertainty remains.
 
 Output status: `discovery`.
 
@@ -41,7 +50,10 @@ Required:
 - content/copy and recovery;
 - interaction priority and cancellation;
 - accessibility and input behavior;
-- intentional differences from references.
+- intentional differences from references;
+- applicable roles, business rules, lifecycle and operational handoffs, or explicit unresolved constraints;
+- rationale for the selected journey and deferred scope when choices were unsettled;
+- validation of material usability/value assumptions, reused evidence, or explicitly owned residual risks; planned checks are not results.
 
 Output status: `design-ready`.
 
@@ -57,7 +69,7 @@ Required:
 - architecture/stack decision;
 - privacy/security and entitlement behavior;
 - migrations and destructive consequences;
-- acceptance scenarios;
+- concrete acceptance scenarios linking relevant rules/decisions to initial data, action and observable outcome;
 - deterministic fixtures/previews;
 - test/check commands;
 - files/modules in scope and forbidden shortcuts;
@@ -121,7 +133,8 @@ Required:
 - validation of bespoke exceptions against their accessibility, adaptive-layout, performance, and visual acceptance criteria;
 - build/package/archive;
 - deployment and rollback plan;
-- verified status updated from evidence only.
+- verified status updated from evidence only;
+- a proportionate outcome review trigger, measure or learning signal, source and owner; unknown baselines remain explicit, and analytics is not enabled without authority.
 
 Output status: `accepted` or `released`.
 
